@@ -1,6 +1,6 @@
-# YOLO11n 사물 인식 웹 (classify-image)
+# YOLO11n 안면 인식 웹 (classify-image)
 
-Python + **Gradio** + **Ultralytics YOLO11n** + **OpenCV**로 만든 단순 사물 인식 웹입니다.
+Python + **Gradio** + **Ultralytics YOLO11n** + **OpenCV**로 만든 안면 인식 웹입니다.
 
 - **좌측 (이미지 입력)**: 이미지를 업로드하면 YOLO11n이 사물을 탐지하고, 바운딩 박스 · 범주이름 · 신뢰도를 그린 결과 이미지를 보여줍니다.
 - **우측 (웹캠 입력)**: 웹캠 영상을 프레임마다 인식해 바운딩 박스가 그려진 영상을 실시간으로 표시합니다.
