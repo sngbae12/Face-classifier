@@ -1,4 +1,4 @@
-# YOLO11n 안면 인식 분석 웹 (classify-image)
+# YOLO11n 안면 인식 분석 웹 (Face-classifier)
 
 Python + **Gradio** + **Ultralytics YOLO11n** + **OpenCV**로 만든 안면 인식 분석 웹입니다.
 
@@ -30,8 +30,8 @@ Python + **Gradio** + **Ultralytics YOLO11n** + **OpenCV**로 만든 안면 인�
 
 ```powershell
 # 1) 저장소 내려받기
-git clone https://github.com/sngbae12/classify-image.git
-cd classify-image
+git clone https://github.com/sngbae12/Face-classifier.git
+cd Face-classifier
 
 # 2) 가상환경 만들기 + 활성화
 python -m venv .venv
@@ -50,8 +50,8 @@ python app.py
 ### macOS / Linux
 
 ```bash
-git clone https://github.com/sngbae12/classify-image.git
-cd classify-image
+git clone https://github.com/sngbae12/Face-classifier.git
+cd Face-classifier
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -148,7 +148,7 @@ python app.py
 ## 6. 프로젝트 구조
 
 ```
-classify-image/
+Face-classifier/
 ├── app.py             # 웹 앱 전체 (모델 로드, OpenCV 그리기, Gradio UI)
 ├── requirements.txt   # 의존성 목록
 ├── .env.example       # 선택적 환경 변수 목록 (비밀정보 없음)
