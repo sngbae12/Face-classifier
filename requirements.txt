@@ -1,4 +1,4 @@
-# YOLO11n 사물 인식 웹 - 의존성
+# YOLO11n 안면 인식 분석 웹 - 의존성
 # 설치: pip install -r requirements.txt
 #
 # torch / torchvision / numpy / pillow 등은 ultralytics가 함께 설치합니다.

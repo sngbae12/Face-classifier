@@ -1,7 +1,9 @@
-"""YOLO11n 사물 인식 웹 (Gradio + Ultralytics + OpenCV).
+"""YOLO11n 안면 인식 분석 웹 (Gradio + Ultralytics + OpenCV).
 
 - 좌측: 이미지 업로드 -> 탐지 결과 이미지 표시
 - 우측: 웹캠 스트리밍 -> 프레임마다 탐지, 바운딩 박스가 그려진 영상 실시간 표시
+
+사람인 경우에도 위치(바운딩 박스)와 범주이름·신뢰도만 표시하며, 누구인지는 구별하지 않는다.
 """
 
 import threading
@@ -85,9 +87,10 @@ def draw_detections(image_bgr: np.ndarray, result) -> np.ndarray:
 # 인식 실행 (Ultralytics)
 # ---------------------------------------------------------------------------
 def detect(image_rgb: np.ndarray | None) -> np.ndarray | None:
-    """RGB 이미지(numpy)를 받아 사물을 탐지하고, 결과가 그려진 RGB 이미지를 돌려준다.
+    """RGB 이미지(numpy)를 받아 탐지하고, 결과가 그려진 RGB 이미지를 돌려준다.
 
     이미지 업로드와 웹캠 프레임 모두 이 함수를 사용한다.
+    신원(누구인지)은 구별하지 않는다.
     """
     if image_rgb is None:
         return None
@@ -108,8 +111,8 @@ detect(np.zeros((480, 640, 3), dtype=np.uint8))
 # 웹캠 결과 프레임을 라이브 미리보기와 같은 방식(박스 안에 맞춤)으로 표시
 CSS = "#webcam video + img { width: 100%; height: 100%; object-fit: contain; }"
 
-with gr.Blocks(title="YOLO11n 사물 인식", fill_width=True) as demo:
-    gr.Markdown("## YOLO11n 사물 인식")
+with gr.Blocks(title="안면 인식 분석", fill_width=True) as demo:
+    gr.Markdown("## 안면 인식 분석")
 
     with gr.Row(equal_height=True):
         # 좌측: 이미지 입력
@@ -122,7 +125,7 @@ with gr.Blocks(title="YOLO11n 사물 인식", fill_width=True) as demo:
                 height=320,
             )
             image_output = gr.Image(
-                label="탐지 결과",
+                label="안면 인식 결과",
                 interactive=False,
                 height=320,
             )
@@ -134,7 +137,7 @@ with gr.Blocks(title="YOLO11n 사물 인식", fill_width=True) as demo:
                 sources=["webcam"],
                 streaming=True,
                 type="numpy",
-                label="웹캠 (실시간 탐지)",
+                label="웹캠 (실시간 안면 인식)",
                 height=700,
                 elem_id="webcam",
                 webcam_options=gr.WebcamOptions(
