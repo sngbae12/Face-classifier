@@ -1,0 +1,12 @@
+# YOLO11n 사물 인식 웹 - 의존성
+# 설치: pip install -r requirements.txt
+#
+# torch / torchvision / numpy / pillow 등은 ultralytics가 함께 설치합니다.
+# (GPU가 없는 노트북이라면 README의 "CPU 전용 torch 먼저 설치" 항목을 참고하세요.)
+#
+# 개발 PC에서 검증된 버전 (Python 3.11.9, Windows 11, CPU):
+#   gradio 6.19.0 / ultralytics 8.4.89 / opencv-python 5.0.0.93 / torch 2.12.1 / numpy 2.4.6
+
+gradio>=6.0,<7          # launch(css=...), gr.WebcamOptions, fill_width 사용 → Gradio 6 필요
+ultralytics>=8.3.0      # YOLO11 모델 지원은 8.3.0부터
+opencv-python>=4.8

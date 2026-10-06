@@ -1,0 +1,40 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# ---- 가상환경 ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- 환경변수 / 비밀정보 (.env.example만 커밋) ----
+.env
+.env.*
+!.env.example
+
+# ---- 모델 가중치 (첫 실행 시 자동 다운로드됨, README 참고) ----
+*.pt
+*.onnx
+*.engine
+
+# ---- Gradio / Ultralytics 실행 중 생성되는 파일 ----
+.gradio/
+flagged/
+runs/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---- 로그 / 임시 ----
+*.log
+*.tmp
